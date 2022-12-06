@@ -3,18 +3,32 @@
 {% block content %}
     <h2>Select an option</h2>
 
-    <div class="interest-select-box">
-        <input class="interest-select" type="checkbox">Mathematics</input>
-        <input class="interest-select" type="checkbox">Art</input>
-        <input class="interest-select" type="checkbox">Music</input>
-        <input class="interest-select" type="checkbox">Programming</input>
-        <input class="interest-select" type="checkbox">Architecture</input>
-        <input class="interest-select" type="checkbox">Microbiology</input>
-        <input class="interest-select" type="checkbox">Medicine</input>
-        <input class="interest-select" type="checkbox">Animals</input>
-        <input class="interest-select" type="checkbox">Healthcare</input>
-        <input class="interest-select" type="checkbox">People</input>
-        <input class="interest-select" type="checkbox">Electronics</input>
-        <input class="interest-select" type="checkbox">Cars</input>
-    </div>
+    <p>
+        At least <strong><span>3</span></strong> interests are required to determine career options.
+    </p>
+
+    <form method="post" action="/results">
+        <fieldset>
+            <div>
+                <input class="interest-select" name="interest-mathematics" type="checkbox">Mathematics</input>
+                <input class="interest-select" name="interest-art" type="checkbox">Art</input>
+                <input class="interest-select" name="interest-music" type="checkbox">Music</input>
+                <input class="interest-select" name="interest-programming" type="checkbox">Programming</input>
+                <input class="interest-select" name="interest-architecture" type="checkbox">Architecture</input>
+                <input class="interest-select" name="interest-microbiology" type="checkbox">Microbiology</input>
+                <input class="interest-select" name="interest-medicine" type="checkbox">Medicine</input>
+                <input class="interest-select" name="interest-animals" type="checkbox">Animals</input>
+                <input class="interest-select" name="interest-healthcare" type="checkbox">Healthcare</input>
+                <input class="interest-select" name="interest-people" type="checkbox">People</input>
+                <input class="interest-select" name="interest-electronics" type="checkbox">Electronics</input>
+                <input class="interest-select" name="interest-cars" type="checkbox">Cars</input>
+                <input class="interest-select" name="interest-physics" type="checkbox">Physics</input>
+            </div>
+            <legend>Pick your interests</legend>
+        </fieldset>
+        <hr>
+        <button id="submit-btn" type="Submit">Submit</button>
+    </form>
+
+    <link ref="stylesheet" href="{{ url_for('static', filename='scripts/client-validation.js') }}">
 {% endblock %}

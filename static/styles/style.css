@@ -1,0 +1,33 @@
+body
+{
+    font-family: 'Roboto';
+}
+
+form
+{
+    margin: 0 auto;
+    width: 600px;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+}
+
+form fieldset legend
+{
+    color: #aaa;
+}
+
+button
+{
+    padding: 5px 10px;
+}
+
+.interest-select
+{
+    padding: 10px;
+    border-radius: 10px;
+    border-color: black;
+    background-color: blue;
+    color: white;
+}
+
