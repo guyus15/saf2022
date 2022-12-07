@@ -11,13 +11,38 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
 </head>
 <body>
-    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-            <h1 class="title is-4">CoursePlotter</h1>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <h1 class="title is-4">Course Plotter</h1>
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">  
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Language
           </a>
+  
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              English
+            </a>
+            <a class="navbar-item">
+              Azerbaycan
+            </a>
+          </div>
         </div>
-      </nav>
+      </div>
+    </div>
+  </nav>
 
     {% block content %}{% endblock %}
 </body>
