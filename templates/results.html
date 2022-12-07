@@ -23,20 +23,30 @@
                     <p>{{ jobs[i].get_description() }}</p>
                 </div>
 
+                <p class="title is-6">Entry Requirements</p>
+                <div class="content">
+                    <p>{{ jobs[i].get_qualifications() }}</p>
+                </div>
+
+                <div class="content">
+                    <p><a href="#">Find courses</a></p>
+                    <p><a href="#">Find apprenticeships</a></p>
+                </div>
+
                 <p class="title is-6">Learn more</p>
                 <div class="content">
                     <ul>
                     {% for link in jobs[i].get_links() %}
-                    <li><a>{{ link }}</a></li>
+                    <li><a href="{{ link }}">{{ link }}</a></li>
                     {% endfor %}
                     </ul>
                 </div>
 
                 {% for interest in jobs[i].get_affiliated_interests() %}
                 {% if interest in user_interests %}
-                <span class="tag is-dark">{{interests.get(interest)}}</span>
-                {% else %}
                 <span class="tag is-primary">{{interests.get(interest)}}</span>
+                {% else %}
+                <span class="tag is-light">{{interests.get(interest)}}</span>
                 {% endif %}
                 {% endfor %}
 
