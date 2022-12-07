@@ -11,7 +11,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
 </head>
 <body>
-    <h1>SAF 2022 Entry</h1>
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <h1 class="title is-4">CoursePlotter</h1>
+          </a>
+        </div>
+      </nav>
 
     {% block content %}{% endblock %}
 </body>

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container is-fluid">
+
+    <section class="hero">
+        <div style="padding-left: 0" class="hero-body">
+          <p class="title">
+            Results
+          </p>
+          <p class="subtitle">
+            Here are the majors which most suit your interests.
+          </p>
+        </div>
+    </section>
+
+    <div class="box">
+        <div class="container is-fluid">
+            {% for i in range(0, jobs_len) %}
+                <p class="title is-4"">{{ i+1 }}. {{ jobs[i].get_name() }}</p>
+                <div class="content">
+                    <p>{{ jobs[i].get_description() }}</p>
+                </div>
+
+                <p class="title is-6">Learn more</p>
+                <div class="content">
+                    <ul>
+                    {% for link in jobs[i].get_links() %}
+                    <li><a>{{ link }}</a></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+
+                {% for interest in jobs[i].get_affiliated_interests() %}
+                {% if interest in user_interests %}
+                <span class="tag is-dark">{{interests.get(interest)}}</span>
+                {% else %}
+                <span class="tag is-primary">{{interests.get(interest)}}</span>
+                {% endif %}
+                {% endfor %}
+
+                {% if i != jobs_len - 1 %}
+                    <hr>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -32,6 +32,11 @@ class Job:
     def increment_match_count(self):
         self.match_count += 1
 
+    def __gt__(self, x):
+        return self.get_match_count() < x.get_match_count()
+
+    def __lt__(self, x):
+        return self.get_match_count() > x.get_match_count()
 
 jobs = [
     Job("Computer Science",
@@ -48,7 +53,7 @@ jobs = [
 
     Job("Civil Engineering",
         ["interest-physics", "interest-architecture"],
-        "Civil Engineering is a job",
+        "Civil Engineering is the profession of designing and executing structural works and maintenance that serve the general public. Such works might include: dams, bridges, aqueducts and canals.",
         ["https://google.com", "https://google.com"]
     )
 ]
